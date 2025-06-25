@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@justherza/ytdl-me": "^0.0.2",
+    "adm-zip": "^0.5.16",
+    "youtube-sr": "^4.3.11"
+  }
+}
