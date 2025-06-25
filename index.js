@@ -23,7 +23,8 @@ if (!name || !fs.existsSync(name)) {
 }
 console.log('Downloading... (may take a very long time!)');
 
-let s = fs.readFileSync(name, { encoding: 'utf-8' }).split('\n');
+let s = fs.readFileSync(name, { encoding: 'utf-8' }).split('\n')
+  .map(x => x.trim()).filter(x => !x || !x.startsWith('#'));
 Promise.all(s.map(async x => [x, await run(x)])).then(x => {
   let z = new zip();
   x.forEach(y =>
